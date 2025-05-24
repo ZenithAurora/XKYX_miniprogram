@@ -8,7 +8,7 @@ Page({
     tempNickname: '',
     checked: false,
     isLoading: false,
-    loadingText: '授权中...',
+    loadingText: '授权中,请稍后...',
 
     // 用户信息
     tempUserInfo: {},
