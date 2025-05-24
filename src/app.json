@@ -1,0 +1,50 @@
+{
+  "entryPagePath": "pages/home/home",
+  "pages": [
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/activity/activity",
+    "pages/serverInfo/serverInfo",
+    "pages/coupon/coupon",
+    "pages/historyCoupon/historyCoupon",
+    "pages/feedBack/feedBack",
+    "pages/userAgreement/userAgreement",
+    "pages/allGoodNav/allGoodNav",
+    "pages/login/login",
+    "pages/couponDetails/couponDetails",
+    "pages/phoneNumberTest/phoneNumberTest",
+    "pages/PurchaseDetails/PurchaseDetails"
+  ],
+  "window": {
+    "navigationBarTitleText": "西科严选",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8fafc",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f5fbf8",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "backgroundColor": "#f2f8f6",
+    "selectedColor": "#ff653e",
+    "color": "black",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "/assets/tarbar/home.png",
+        "selectedIconPath": "/assets/tarbar/home-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/profile/profile",
+        "iconPath": "/assets/tarbar/profile.png",
+        "selectedIconPath": "/assets/tarbar/profile-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {}
+}

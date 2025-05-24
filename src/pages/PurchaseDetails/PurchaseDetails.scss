@@ -1,0 +1,153 @@
+/* pages/goods-detail/goods-detail.scss */
+$primary: #ff6b6b;
+$dark: #2d3436;
+$light: #636e72;
+
+// 容器
+.container {
+  padding-bottom: 160rpx;
+  background: #f9f9f9;
+}
+
+// -----------------返回箭头--------------------------
+.nav-back-btn {
+  position: absolute;
+  top: 110rpx;
+  left: 45rpx;
+  z-index: 1000;
+}
+
+/* 字体图标样式 */
+.nav-back-btn .iconfont {
+  font-size: 40rpx;
+  transition: transform 0.3s ease;
+}
+.nav-back-btn:active {
+  background-color: transparent;
+  transform: scale(0.7);
+}
+
+//------------------------------ 商品头图----------------------
+.banner {
+  width: 100%;
+  height: 480rpx;
+}
+
+.header {
+  padding: 32rpx;
+  background: white;
+
+  .badge {
+    background: linear-gradient(135deg, #ff7675, #ff6b6b);
+    color: white;
+    padding: 8rpx 24rpx;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    width: fit-content;
+    margin-bottom: 20rpx;
+  }
+
+  .title {
+    font-size: 36rpx;
+    font-weight: 600;
+    color: $dark;
+    line-height: 1.4;
+  }
+
+  .tags {
+    margin-top: 16rpx;
+    .tag {
+      padding: 4rpx 16rpx;
+      background: #f5f5f5;
+      border-radius: 8rpx;
+      margin-right: 16rpx;
+      font-size: 24rpx;
+      color: $light;
+    }
+  }
+}
+
+.price-card {
+  background: white;
+  padding: 32rpx;
+  margin: 24rpx;
+  border-radius: 24rpx;
+
+  .price-group {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 32rpx;
+
+    .current {
+      color: $primary;
+      font-size: 56rpx;
+      font-weight: 700;
+      margin-right: 24rpx;
+    }
+
+    .original {
+      color: $light;
+      text-decoration: line-through;
+      font-size: 28rpx;
+    }
+  }
+
+  .sale-info {
+    .stock {
+      display: block;
+      color: $light;
+      margin-bottom: 16rpx;
+    }
+  }
+
+  .discount-tag {
+    margin-top: 24rpx;
+    padding: 12rpx 24rpx;
+    background: #fff5f5;
+    color: $primary;
+    border-radius: 8rpx;
+    width: fit-content;
+    font-size: 24rpx;
+  }
+}
+
+.section {
+  background: white;
+  margin: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+
+  .section-title {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: $dark;
+    margin-bottom: 32rpx;
+    position: relative;
+    padding-left: 40rpx;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8rpx;
+      height: 32rpx;
+      background: $primary;
+      border-radius: 4rpx;
+    }
+  }
+
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16rpx;
+
+    .ingredient {
+      padding: 8rpx 24rpx;
+      background: #f5f5f5;
+      border-radius: 8rpx;
+      color: $light;
+    }
+  }
+}

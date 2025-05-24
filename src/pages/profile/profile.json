@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-divider": "@vant/weapp/divider/index",
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "backgroundColor": "#a8eae3"
+}

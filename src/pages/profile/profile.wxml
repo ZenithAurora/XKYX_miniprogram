@@ -1,0 +1,133 @@
+<view class="profile-container">
+
+  <!-- 背景 -->
+  <view class="bg">
+    <view class="bgImg"></view>
+  </view>
+
+  <!-- 头部信息 -->
+  <view class="head">
+    <view class="info">
+      <block wx:if="{{token}}">
+        <view class="avatar-container">
+          <image src="{{userInfo.avatar}}" mode="aspectFill" class="userAvator" />
+        </view>
+        <view class="user-info">
+          <block class="default">
+            <text class="nickname">{{userInfo.nickname}}</text>
+            <view class="user-phone">
+              <van-icon name="phone-o" class="phone-icon" />：{{userInfo.phoneNumber}}
+            </view>
+            <text class="user-id">{{userInfo.userId}}</text>
+            <text class="edit-btn" catch:tap="showEditModal">修改信息</text>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="avatar-container" catch:tap="login">
+          <image src="https://xkzx-mkj.oss-cn-beijing.aliyuncs.com/620745f7-91a7-4dff-9071-f9ffba7b016b.jpg" mode="aspectFit" class="userAvator" />
+        </view>
+        <view class="user-info" bind:tap="login">
+          <block class="default">
+            <text class="nickname">未登录</text>
+            <text class="user-id">请先授权登录</text>
+          </block>
+        </view>
+      </block>
+    </view>
+
+    <view class="coupon-section">
+      <view class="section-title">
+        <text class="section-name">我的优惠券</text>
+        <navigator url="/pages/historyCoupon/historyCoupon" class="view-all">全部 ></navigator>
+      </view>
+      <view class="coupon-tabs">
+        <text class="tab" catch:tap="ClickCouponCount" data-tab="usable">可使用</text>
+        <text class="tab" catch:tap="ClickCouponCount" data-tab="used">已使用</text>
+      </view>
+      <view class="coupon-counts">
+        <view catch:tap="ClickCouponCount" data-tab="usable" class="count">{{available}}</view>
+        <view catch:tap="ClickCouponCount" data-tab="used" class="count">{{unused}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 其他功能模块 -->
+  <view class="function-section">
+    <view class="function-header">
+      <text class="name">我的服务</text>
+    </view>
+    <navigator url="/pages/serverInfo/serverInfo">
+      <view class="function-item">
+        <text><text class="iconfont icon-kefu"></text>找我合作</text>
+        <text class="arrow">></text>
+      </view>
+    </navigator>
+    <view class="contact-button">
+      <view class="function-item">
+        <text><text class="iconfont icon-liwu"></text> 入群有礼</text>
+        <!-- 左侧隐藏按钮 -->
+        <button open-type="contact" class="hidden-contact-btn-left" />
+        <!-- 右侧隐藏按钮 -->
+        <button open-type="contact" class="hidden-contact-btn-right" />
+      </view>
+    </view>
+    <navigator url="/pages/feedBack/feedBack">
+      <view class="function-item">
+        <text><text class="iconfont icon-a-bumanyibiaoqing"></text> 反馈中心</text>
+        <text class="arrow">></text>
+      </view>
+    </navigator>
+    <navigator url="/pages/userAgreement/userAgreement">
+      <view class="function-item">
+        <text><text class="iconfont icon-a-renwuqingdanliebiao"></text> 使用协议与条款</text>
+        <text class="arrow">></text>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 模态框 -->
+  <view class="modal-mask" hidden="{{!showEditModal}}" catchtouchmove="true">
+    <view class="edit-modal">
+      <view class="modal-header">
+        <text class="modal-title">𝙐𝙨𝙚𝙧𝙄𝙣𝙛𝙤</text>
+        <view class="close-btn" bindtap="hideEditModal">
+          <text class="close-icon" bind:tap="hideEditModal">×</text>
+        </view>
+      </view>
+
+      <view class="modal-body">
+        <view class="form-item">
+          <text class="form-label">头像</text>
+          <view class="avatar-uploader">
+            <view class="avatar-container2">
+              <image class="preview-avatar" src="{{tempAvatar}}" />
+              <button open-type="chooseAvatar" class="btn-chooseAvatar" bindchooseavatar="onChooseAvatar"></button>
+              <view class="edit-mask">
+                <text class="edit-tip">点击更换头像</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="form-item">
+          <text class="form-label">昵称</text>
+          <view class="input-container">
+            <input class="name-input" value="{{tempName}}" placeholder="请输入昵称" placeholder-class="placeholder-style" bindinput="onNameInput" />
+            <text class="char-count">{{tempName.length}}/10</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="modal-footer">
+        <button class="save-btn" bindtap="saveChanges" hover-class="save-btn-hover">保存修改</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部开发者署名 -->
+  <van-divider contentPosition="center" customStyle="color: #009688; border-color: #009688; font-size: 12px" class="divider">
+    由Uchain-ocloud团队提供技术支持
+  </van-divider>
+
+</view>

@@ -1,0 +1,215 @@
+<view class="container">
+  <view class="header">
+    <text class="title">西科严选隐私条款</text>
+  </view>
+
+  <view class="content" scroll-y="true" bindscroll="onPageScroll">
+    <!-- 目录 -->
+    <view class="section">
+      <text class="section-title">目录索引</text>
+      <view class="directory">
+        <view class="directory-item" bindtap="scrollToSection" data-target="collection">
+          一、我们如何收集和使用您的信息
+        </view>
+        <view class="directory-item" bindtap="scrollToSection" data-target="storage">
+          二、我们如何存储和保护您的信息
+        </view>
+        <view class="directory-item" bindtap="scrollToSection" data-target="sharing">
+          三、信息共享与披露
+        </view>
+        <view class="directory-item" bindtap="scrollToSection" data-target="coupon">
+          四、优惠券与券码管理
+        </view>
+        <view class="directory-item" bindtap="scrollToSection" data-target="rights">
+          五、您的权利
+        </view>
+        <view class="directory-item" bindtap="scrollToSection" data-target="update">
+          六、隐私条款更新
+        </view>
+        <view class="directory-item" bindtap="scrollToSection" data-target="contact">
+          七、联系我们
+        </view>
+      </view>
+    </view>
+
+    <!-- 一、我们如何收集和使用您的信息 -->
+    <view class="section" id="collection">
+      <text class="section-title">一、我们如何收集和使用您的信息</text>
+
+      <view class="card">
+        <text class="card-title">1. 账号登录</text>
+        <view class="card-content">
+          <text class="card-item">收集范围：当您点击授权登录的时候，可以选择将微信头像和昵称授权给小程序使用，除此外我们不会主动获取您的昵称、头像或其他个人信息。</text>
+          <text class="card-item">用途说明：用于验证身份、发放活动奖励及发送重要通知（如中奖提醒）。我们承诺，您的信息仅用于上述用途，不会被用于其他任何目的。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">2. 用户反馈与奖金发放</text>
+        <view class="card-content">
+          <text class="card-item">收集范围：仅在您参与“用户反馈”或“活动领奖”时，我们会收集您提交的手机号。此信息仅用于奖金或奖励的发放，不会用于其他目的。</text>
+          <text class="card-item">用途说明：定向发放现金红包或优惠券，未经您单独同意不会用于其他任何用途。提交信息将在奖金发放后保留30天，逾期自动删除。</text>
+          <text class="card-item">示例：若您参与“月核销王”活动并获奖，需提交手机号以便接收奖金，该信息独立存储且与日常数据隔离。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">3. 广告与数据分析</text>
+        <view class="card-content">
+          <text class="card-item">当前阶段：首页广告位仅展示平台宣传海报及商家视频，不嵌入第三方广告SDK，不收集设备信息或浏览行为。</text>
+          <text class="card-item">未来可能：若引入广告服务（如微信广告SDK），我们将提前更新条款并说明以下内容：</text>
+          <text class="card-item">信息收集：广告商可能会收集设备型号、IP地址等匿名信息，但不会获取您的个人身份信息。</text>
+          <text class="card-item">用户选择：您可以通过设备系统设置关闭广告追踪功能，以限制广告商对您设备信息的收集。</text>
+          <text class="card-item">广告标识：所有广告页面将明确标注“广告”字样，以便您识别广告内容与普通内容的区别。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">4. 地理位置</text>
+        <view class="card-content">
+          <text class="card-item">明确声明：我们不会请求或获取您的地理位置权限，商家地址以文字形式展示（如“西南科技大学北门奶茶店”），您可手动复制至地图APP导航。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">5. 本地缓存数据</text>
+        <view class="card-content">
+          <text class="card-item">为提升体验，小程序可能在本设备存储非敏感数据（如访问权限令牌、用户昵称和头像），清理小程序缓存将自动删除此类数据。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 二、我们如何存储和保护您的信息 -->
+    <view class="section" id="storage">
+      <text class="section-title">二、我们如何存储和保护您的信息</text>
+
+      <view class="card">
+        <text class="card-title">1. 存储方式</text>
+        <view class="card-content">
+          <text class="card-item">用户头像的URL等数据加密存储于国内阿里云服务器，保留期限为账号注销后30天。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">2. 安全措施</text>
+        <view class="card-content">
+          <text class="card-item">采用HTTPS传输、访问权限隔离、定期安全审计，承诺不向第三方出售数据。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 三、信息共享与披露 -->
+    <view class="section" id="sharing">
+      <text class="section-title">三、信息共享与披露</text>
+
+      <view class="card">
+        <text class="card-title">1. 必要场景共享</text>
+        <view class="card-content">
+          <text class="card-item">当您使用优惠券时，仅向对应商家提供核销码（如二维码），此二维码不含用户任何个人身份信息。</text>
+          <text class="card-item">核销码安全机制：核销码内仅包含与活动优惠券相关的信息，商家无法反向获取用户身份。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">2. 法律强制要求</text>
+        <view class="card-content">
+          <text class="card-item">仅在配合司法机关调查时披露信息，并会提前通知您（除非法律禁止）。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 四、优惠券与动态二维码管理 -->
+    <view class="section" id="coupon">
+      <text class="section-title">四、优惠券与券码管理</text>
+
+      <view class="card">
+        <text class="card-title">1. 二维码生成规则</text>
+        <view class="card-content">
+          <text class="card-item">数据关联：当您领取活动优惠券时，系统将自动生成唯一核销码（二维码），该二维码关联以下信息：活动Id、优惠券ID、有效期（如“2025-05-01至2025-10-07”）、核销状态（未使用/已使用/已过期）、用户Id（如123等，不包含任何用户个人隐私信息）等。</text>
+          <text class="card-item">防重复领取：同一用户在同一活动周期内如若已经领取了一张优惠券（火锅畅饮->1人餐），仅当在此优惠券已使用并且活动还未下架的情况之下，才能再次领取该活动的该类型优惠券（如上面提到的火锅畅饮 1人餐），系统将校验历史领取记录。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">2. 二维码有效期与失效</text>
+        <view class="card-content">
+          <text class="card-item">有效期控制：二维码将在活动结束后自动失效，失效后数据可在服务器内保留30天用于纠纷处理。</text>
+          <text class="card-item">核销后重置：若您已核销某活动优惠券，可在活动周期内再次重新领取，系统将生成新二维码。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">3. 数据存储与删除</text>
+        <view class="card-content">
+          <text class="card-item">存储位置：二维码关联数据独立存储于加密数据库，与用户基础信息隔离。</text>
+          <text class="card-item">数据删除规则：</text>
+          <text class="card-item">已核销数据：将在数据库保留30天后自动删除；</text>
+          <text class="card-item">未核销的过期数据：同上</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">4. 商家核销行为约束</text>
+        <view class="card-content">
+          <text class="card-item">最小化数据获取：商家扫码核销时，仅验证二维码有效性及对应活动规则，无法获取您的手机号或其他身份信息。</text>
+          <text class="card-item">核销记录透明：您可在“我的-优惠券”中查看有效时间及商家店铺名称等信息。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">5. 示例</text>
+        <view class="card-content">
+          <text class="card-item">- 您领取“周二奶茶5折券”后，二维码有效期至下周一（活动结束后3天内），若未使用则自动失效；</text>
+          <text class="card-item">- 核销后，您可于活动期限内再次领取新二维码，旧数据将被覆盖。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 五、您的权利 -->
+    <view class="section" id="rights">
+      <text class="section-title">五、您的权利</text>
+
+      <view class="card">
+        <text class="card-title">1. 查询与更正</text>
+        <view class="card-content">
+          <text class="card-item">通过“我的-修改信息”随时查看或者自定义您的头像和昵称。</text>
+        </view>
+      </view>
+
+      <view class="card">
+        <text class="card-title">2. 拒绝授权</text>
+        <view class="card-content">
+          <text class="card-item">您可拒绝提供非必要信息如反馈界面的手机号，仅影响部分奖励发放，不影响基础功能。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 六、隐私条款更新 -->
+    <view class="section" id="update">
+      <text class="section-title">六、隐私条款更新</text>
+
+      <view class="card">
+        <view class="card-content">
+          <text class="card-item">修改条款前将通过小程序弹窗或公告通知，若您继续使用视为接受更新内容。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 七、联系我们 -->
+    <view class="section" id="contact">
+      <text class="section-title">七、联系我们</text>
+
+      <view class="card">
+        <view class="card-content">
+          <text class="card-item">隐私问题投诉/咨询：您可以将反馈信息在反馈界面提交或者直接发送邮件至<text user-select>19114023393@163.com</text>，我们将在48小时内响应您的反馈。</text>
+          <text class="card-item">您在使用小程序过程中遇到的任何问题可以通过或反馈中心或者联系客服，我们将耐心为您处理。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 返回顶部按钮 -->
+    <view class="back-to-top {{showBackToTop ? 'show' : ''}}" bindtap="scrollToTop">
+      <text class="back-to-top-icon">↑</text>
+    </view>
+  </view>
+</view>

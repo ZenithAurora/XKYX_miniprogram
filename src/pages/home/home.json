@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-divider": "@vant/weapp/divider/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "Swiper": "/components/Swiper/Swiper"
+  },
+  "navigationStyle": "custom",
+  "navigationBarBackgroundColor": "#f4faf7",
+  "enablePullDownRefresh": true
+}

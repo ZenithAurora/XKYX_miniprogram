@@ -1,0 +1,125 @@
+/* 整体容器 */
+.all-good-nav {
+  padding: 40rpx 30rpx;
+  background-color: #fdfdfd;
+  height: 90vh;
+}
+
+/* 标题样式 */
+.good-nav-title {
+  font-weight: 800;
+  font-size: 38rpx;
+  color: #2c3e50;
+  margin: 0 20rpx 60rpx;
+  padding: 20rpx 0 20rpx 40rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.good-nav-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 60%;
+  width: 12rpx;
+  background: linear-gradient(180deg, #007aff 0%, #00c7ff 100%);
+  border-radius: 8rpx;
+  transform: translateY(-50%) rotate(0deg);
+  top: 50%;
+}
+
+/* 内容区域 */
+.all-good-nav-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30rpx 20rpx;
+  padding: 0 20rpx;
+}
+
+/* 卡片容器 */
+.kcbox {
+  background: #ffffff;
+  border-radius: 50rpx;
+  padding: 10rpx 20rpx;
+  box-shadow: 10rpx 12rpx 40rpx -12rpx rgba(0, 122, 255, 0.15);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 2s ease;
+}
+
+/* 点击动效 */
+.kcbox:active {
+  transform: translateY(6rpx) scale(0.98);
+  box-shadow: 0 6rpx 20rpx rgba(0, 122, 255, 0.1);
+}
+
+/* 图片样式 */
+.kcbox-image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  border: 2rpx solid #f0f2f5;
+  background: #fff;
+  box-sizing: content-box;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.kcbox-image:active {
+  transform: scale(0.92);
+}
+
+/* 文字样式 */
+.good-item-name {
+  font-size: 24rpx;
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 0 10rpx;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  /* 新增多行省略号特性 */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+/* 空状态样式 */
+.all-good-nav-empty {
+  text-align: center;
+  padding: 100rpx 0;
+  animation: Enter 2s ease;
+}
+
+.all-good-nav-empty image {
+  height: 340rpx;
+  opacity: 1;
+}
+
+.all-good-nav-empty text {
+  color: #7f8c8d;
+  font-size: 30rpx;
+  display: block;
+  margin-top: 20rpx;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+  }
+}
+@keyframes Enter {
+  from {
+    transform: translateY(10rpx);
+  }
+}

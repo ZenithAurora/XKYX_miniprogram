@@ -1,0 +1,89 @@
+/* wxss */
+.container {
+  padding: 32rpx;
+  background: linear-gradient(160deg, #f8f9fa 0%, #f1f3f5 100%);
+  min-height: 100vh;
+}
+
+/* 卡片容器 */
+.section {
+  margin-bottom: 32rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50rpx;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(20rpx);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.card-hover:active {
+  transform: translateY(4rpx);
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 头部样式 */
+.gradient-header {
+  padding: 32rpx;
+  background: linear-gradient(135deg, #fff5f5 0%, #fff0f6 100%);
+  position: relative;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #2b2d42;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1rpx;
+}
+
+.decor-line {
+  width: 100%;
+  height: 12rpx;
+  position: absolute;
+  bottom: -6rpx;
+  left: 0;
+}
+
+/* 内容区域 */
+.section-content {
+  padding: 32rpx;
+}
+
+/* 富文本自定义样式 */
+.rich-content {
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+/* 餐饮专属样式 */
+.rich-content h1 {
+  border-left: 8rpx solid #ff6b00 !important; /* 橙色边框 */
+  color: #262626;
+}
+
+.rich-content li {
+  padding-left: 32rpx;
+  position: relative;
+  margin-bottom: 16rpx;
+}
+
+.rich-content li::before {
+  content: "✓";
+  color: #ff6b00;
+  position: absolute;
+  left: 0;
+  font-size: 28rpx;
+}
+
+.rich-content h2 {
+  font-size: 30rpx;
+  color: #404040;
+  margin: 32rpx 0 16rpx;
+}
+
+.rich-content ul {
+  padding-left: 40rpx;
+}

@@ -1,0 +1,99 @@
+<view class="coupons-container">
+  <!-- 选项卡 -->
+  <view class="tab-bar">
+    <view wx:for="{{['usable', 'used', 'expired']}}" wx:key="*this" class="tab-item {{activeTab === item ? 'active' : ''}}" bindtap="switchTab" data-tab="{{item}}">
+      {{tabLabels[index]}}({{couponCounts[index]}})
+    </view>
+    <view class="tab-indicator" animation="{{tabAnimation}}"></view>
+  </view>
+
+  <!-- 团购券列表 -->
+  <scroll-view class="coupons-list" scroll-y>
+
+    <!-- 空状态 -->
+    <view wx:if="{{currentList.length === 0}}" class="empty-state">
+      <van-empty description="空空如也~" />
+    </view>
+
+    <!-- 团购券卡片 -->
+    <view wx:for="{{currentList}}" wx:key="qrCodeUrl" class="coupon-card {{item.status}}" animation="{{item.animation}}" bind:tap="showCouponDetail" id="{{item.status}}" data-id="{{item.couponId}}">
+      <!-- 左侧图片区 -->
+      <view class="card-left">
+        <view class="coupon-img-container">
+          <image src="{{item.couponImg}}" mode="aspectFill" class="coupon-img" />
+          <!-- 渐变遮罩 -->
+          <view class="gradient-overlay"></view>
+          <!-- 品牌标识 -->
+          <view class="brand-info">
+            <view class="brand-detail">
+              <text class="brand-name">{{item.title}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 右侧信息区 -->
+      <view class="card-right">
+        <!-- 店铺信息 -->
+        <view class="shop-info">
+          <view class="shop-detail">
+            <view class="shop-name">{{item.shopName}}</view>
+            <view class="shop-location-money">
+              <text class="iconfont icon-a-dingweiweizhiditu"></text>
+              <view class="location">{{item.shopAddress}}</view>
+              <view class="payMoney">￥{{item.payValue}}</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 分隔线 -->
+        <view class="divider"></view>
+
+        <!-- 优惠详情 -->
+        <view class="coupon-detail">
+          <view class="usage-info">
+            <view class="valid-date">
+              <text class="iconfont icon-a-shijianzuijin"></text>
+              有效期至 {{item.endTime}}
+            </view>
+          </view>
+          <view class="action-btns">
+            <view class="btn copyPosition-btn" catch:tap="copyPosition" id="{{item.status}}" data-id="{{item.couponId}}">
+              复制地址
+            </view>
+            <view class="btn use-btn" catch:tap="handleUseCoupon" data-id="{{item.couponId}}" wx:if="{{activeTab === 'usable'}}">
+              券码
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 状态角标 -->
+      <block>
+        <view class="status-tag usableStatus" wx:if="{{item.status === 'usable'}}">待使用</view>
+        <view class="status-tag usedStatus" wx:if="{{item.status === 'used'}}">已使用</view>
+        <view class="status-tag" wx:if="{{item.status === 'expired'}}">已失效</view>
+      </block>
+    </view>
+
+
+    <!-- 模态框 -->
+    <view class="modal {{showModal ? 'show' : ''}}">
+      <view class="modal-content">
+        <view class="modal-header">
+          <text class="modal-title">优惠券码</text>
+          <text class="modal-close" bindtap="closeModal">×</text>
+        </view>
+        <view class="modal-body">
+          <view class="money">{{selectedCouponPayMoney}}</view>
+          <!-- <view class="original-money">10</view> -->
+          <image src="{{selectedCouponQRCode}}" class="modal-image" mode="aspectFill" show-menu-by-longpress />
+          <view class="tip">核销完毕后请退出自行完成支付</view>
+          <navigator target="miniProgram" open-type="exit">
+            <button class="scan-btn">退出小程序</button>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

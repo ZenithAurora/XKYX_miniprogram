@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="feedback-header">
+    <text class="title">您有什么问题或者建议想对我们说</text>
+  </view>
+
+  <view class="feedback-content">
+    <!-- 新增投诉类型选择 -->
+    <view class="form-item">
+      <text class="form-label">反馈类型：</text>
+      <picker class="type-picker" bindchange="onTypeChange" value="{{selectedTypeIndex}}" range="{{feedbackTypes}}">
+        <view class="picker-content">
+          {{feedbackTypes[selectedTypeIndex] || '请选择反馈类型'}}
+          <text class="arrow-icon">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">反馈内容：</text>
+      <view class="textarea-container">
+        <textarea class="feedback-textarea" placeholder="您的宝贵意见就是我们进步的源泉（300字以内）" bindinput="onFeedbackInput" value="{{feedbackContent}}" maxlength="300" />
+        <view class="word-count">
+          <text>{{currentWordCount}}/300</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">联系方式：</text>
+      <input class="feedback-input" placeholder="请输入手机号" bindinput="onContactInput" value="{{contactInfo}}" />
+    </view>
+
+    <view class="contact-info">
+      <text class="iconfont icon-kefu"></text>
+      <text>客服电话：19114023393（工作日 9:00-18:00）</text>
+    </view>
+
+    <button class="submit-btn" bindtap="submitFeedback" type="primary" hover-class="submit-btn-hover">
+      提交反馈
+    </button>
+  </view>
+</view>

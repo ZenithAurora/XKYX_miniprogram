@@ -1,0 +1,232 @@
+/* 页面样式 */
+.container {
+  background: linear-gradient(135deg, #bdc9e2 0%, #bdd1e6 100%);
+  min-height: 100vh;
+  padding: 32rpx;
+  background-image: url("https://xkzx-mkj.oss-cn-beijing.aliyuncs.com/3b45f6f1-1f2f-4f16-9d0c-ac9fd7687ee8.png");
+  background-size: cover;
+}
+
+// -----------------返回箭头--------------------------
+/* 返回按钮容器 */
+.nav-back-btn {
+  position: absolute;
+  top: 100rpx;
+  left: 46rpx;
+  z-index: 1000;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* 字体图标样式 */
+.nav-back-btn .iconfont {
+  font-size: 50rpx;
+  margin-left: -4rpx;
+  transition: transform 0.3s ease;
+}
+.nav-back-btn:active {
+  background-color: transparent;
+  transform: scale(0.92);
+}
+.nav-back-btn:active .iconfont {
+  transform: translateX(-50rpx);
+}
+
+/* ---------------------通用卡片样式------------------------ */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50rpx;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.06);
+  padding: 40rpx;
+  margin-bottom: 32rpx;
+  backdrop-filter: blur(30px);
+}
+
+/* 头部信息卡片 */
+.header-card {
+  position: relative;
+  padding: 60rpx 30rpx;
+  margin-top: 160rpx;
+
+  .store-info {
+    position: relative;
+    margin-bottom: 32rpx;
+
+    .store-detail {
+      position: relative;
+      padding-right: 160rpx; /* 为按钮留出空间 */
+
+      .copy-button {
+        position: absolute;
+        right: -6rpx;
+        top: 0rpx;
+        margin: 0;
+        padding: 0 20rpx;
+        height: 52rpx;
+        line-height: 52rpx;
+        background: linear-gradient(135deg, #ff9f4d 0%, #ff6b6b 100%);
+        border-radius: 26rpx;
+        color: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        box-shadow: none;
+
+        &::after {
+          border: none; /* 移除默认边框 */
+        }
+
+        .icon-fuzhi {
+          margin-right: 8rpx;
+          font-size: 28rpx;
+        }
+      }
+
+      .store-name {
+        font-size: 36rpx;
+        color: #333;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 10rpx;
+        margin-left: 16rpx;
+      }
+    }
+  }
+  .time-info {
+    display: flex;
+    align-items: center;
+
+    .clock-icon {
+      font-size: 36rpx;
+      color: #999;
+      margin-right: 16rpx;
+    }
+
+    .valid-date {
+      font-size: 26rpx;
+      color: #666;
+    }
+  }
+}
+
+.position-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  .position-icon {
+    font-size: 36rpx;
+    color: #999;
+    margin-right: 10rpx;
+  }
+
+  .position {
+    font-size: 26rpx;
+    color: #666;
+    overflow: hidden;
+    /* 新增多行省略号特性 */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+}
+
+/* 二维码卡片 */
+.qr-card {
+  text-align: center;
+  background-color: #ffffff;
+
+  .qr-header {
+    .qr-title {
+      font-size: 44rpx;
+      color: #2d3436;
+      font-weight: 700;
+      display: block;
+    }
+
+    .qr-tip {
+      margin-top: 10rpx;
+      font-size: 24rpx;
+      color: #999;
+    }
+  }
+
+  .qr-container {
+    background: #ffffff;
+    border-radius: 50rpx;
+    margin: 0 auto;
+
+    .qr-image {
+      width: 520rpx;
+      height: 520rpx;
+      border-radius: 40rpx;
+      object-fit: fill;
+    }
+  }
+
+  .usage-tips {
+    margin: 0 auto;
+    margin-top: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 119, 0, 0.102);
+    padding: 24rpx;
+    border-radius: 26rpx;
+
+    .tip-icon {
+      color: #2d5aff;
+      font-size: 32rpx;
+      margin-right: 12rpx;
+    }
+
+    .tip-text {
+      font-size: 26rpx;
+      color: rgb(241, 156, 18);
+    }
+  }
+}
+
+/* 操作提示栏 */
+.operation-tips {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx 0;
+
+  .tip-item {
+    display: flex;
+    align-items: center;
+
+    .tip-icon {
+      font-size: 36rpx;
+      color: #2d5aff;
+      margin-right: 12rpx;
+    }
+
+    text {
+      font-size: 28rpx;
+      color: #2d3436;
+      letter-spacing: 0.5rpx;
+    }
+  }
+
+  .divider {
+    width: 2rpx;
+    height: 40rpx;
+    background: #eee;
+  }
+}
+
+.iconfont {
+  margin-right: 6rpx;
+  opacity: 0.7;
+  font-size: 26rpx;
+}

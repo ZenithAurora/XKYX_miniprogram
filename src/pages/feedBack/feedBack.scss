@@ -1,0 +1,152 @@
+/* 优化后的样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #eaeff5;
+  font-family: "华文楷体 PingFang SC ", sans-serif;
+}
+
+/* 头部样式 */
+.feedback-header {
+  padding: 40rpx 30rpx;
+  background-color: #8074e6;
+  box-shadow: 0 4rpx 12rpx rgba(108, 92, 231, 0.2);
+  width: 100vw;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 表单容器 */
+.feedback-content {
+  flex: 1;
+  padding: 40rpx;
+  background: #ffffff;
+  border-radius: 30rpx 30rpx 0 0;
+  margin-top: -20rpx;
+  margin-left: 1rpx;
+}
+
+.form-item {
+  margin-bottom: 40rpx;
+}
+
+.form-label {
+  display: block;
+  font-size: 32rpx;
+  color: #2d3436;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.form-label::before {
+  content: "* ";
+  color: orangered;
+}
+
+/* 类型选择器 */
+.type-picker {
+  width: 100%;
+  height: 80rpx;
+}
+
+.picker-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  height: 80rpx;
+  background: #f8f9fa;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+  border: 2rpx solid #e0e0e0;
+}
+
+.arrow-icon {
+  color: #999;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+
+/* 输入区域 */
+.textarea-container {
+  position: relative;
+  border-radius: 26rpx;
+  background: #f8f9fa;
+  padding: 20rpx;
+  border: 2rpx solid #e0e0e0;
+}
+
+.feedback-textarea {
+  width: 100%;
+  height: 300rpx;
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333;
+}
+
+.word-count {
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.feedback-input {
+  height: 80rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  background: #f8f9fa;
+  border-radius: 30rpx;
+  border: 2rpx solid #e0e0e0;
+}
+
+/* 客服信息 */
+.contact-info {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  font-size: 24rpx;
+  color: #666;
+  border-top: 2rpx dashed #eee;
+  margin-top: 40rpx;
+}
+
+.icon-kefu {
+  font-size: 32rpx;
+  color: #6c5ce7;
+  margin-right: 15rpx;
+}
+
+/* 提交按钮 */
+.submit-btn {
+  width: 80%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: linear-gradient(135deg, #6c5ce7, #8e7cee);
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  box-shadow: 0 8rpx 20rpx rgba(108, 92, 231, 0.3);
+  transition: all 0.3s;
+  animation: footEnter 2s ease-in-out;
+}
+
+@keyframes footEnter {
+  from {
+    transform: translateY(10rpx);
+  }
+}
+.submit-btn-hover {
+  opacity: 0.9;
+  transform: translateY(2rpx);
+}

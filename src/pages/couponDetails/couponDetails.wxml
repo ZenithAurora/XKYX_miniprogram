@@ -1,0 +1,22 @@
+<!-- wxml -->
+<view class="container">
+  <!-- 团购详情 -->
+  <view class="section card-hover">
+    <view class="section-header gradient-header">
+      <text class="section-title">🎉 优惠券详情</text>
+    </view>
+    <view class="section-content">
+      <rich-text user-select class="rich-content" nodes="{{groupPurchaseDetails}}"></rich-text>
+    </view>
+  </view>
+
+  <!-- 购买须知 -->
+  <view class="section card-hover">
+    <view class="section-header gradient-header">
+      <text class="section-title">📌 参与须知</text>
+    </view>
+    <view class="section-content">
+      <rich-text user-select class="rich-content" nodes="{{purchaseNotes}}"></rich-text>
+    </view>
+  </view>
+</view>

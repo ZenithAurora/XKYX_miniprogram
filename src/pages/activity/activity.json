@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#f5f7fa",
+  "navigationBarTitleText": "活动详情",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-divider": "@vant/weapp/divider/index"
+  }
+}

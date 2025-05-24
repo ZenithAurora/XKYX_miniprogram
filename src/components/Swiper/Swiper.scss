@@ -1,0 +1,26 @@
+.item-img {
+  width: 100%;
+  height: 100%;
+}
+.itme-video{
+  will-change: transform;
+}
+
+.advertisement-swiper {
+  height: 340rpx;
+}
+
+/* 修改为更高优先级的写法 */
+.advertisement-swiper .wx-swiper-dot {
+  width: 8rpx !important;
+  height: 4rpx !important;
+  border-radius: 2rpx !important;
+  margin: 0 6rpx !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  transition: all 3s !important;
+}
+
+.advertisement-swiper .wx-swiper-dot-active {
+  width: 24rpx !important;
+  background: #fff !important;
+}

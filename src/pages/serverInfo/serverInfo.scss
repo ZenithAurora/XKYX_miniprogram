@@ -1,0 +1,188 @@
+.container {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-size: cover;
+  overflow: hidden;
+  background-image: url("https://xkzx-mkj.oss-cn-beijing.aliyuncs.com/6fcedd50-4a00-4649-9034-f33e9edad2f7.jpg");
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25rpx);
+  }
+}
+
+// / -----------------返回箭头--------------------------
+/* 返回按钮容器 */
+.nav-back-btn {
+  position: absolute;
+  top: 100rpx;
+  left: 46rpx;
+  z-index: 1000;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* 字体图标样式 */
+.nav-back-btn .iconfont {
+  font-size: 42rpx;
+  margin-left: -4rpx;
+  transition: transform 0.3s ease;
+  font-size: 48rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+.nav-back-btn:active {
+  background-color: transparent;
+  transform: scale(0.92);
+}
+.nav-back-btn:active .iconfont {
+  transform: translateX(-50rpx);
+}
+
+// -----------头部样式------------------
+.content {
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(40rpx) saturate(200%);
+  border-radius: 48px;
+  text-align: center;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.08);
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+  margin: 270rpx 40rpx 0;
+  padding: 64rpx 40rpx;
+  position: relative;
+  z-index: 2;
+  transform: all;
+  animation: cardEnter 2s ease-in-out;
+}
+@keyframes cardEnter {
+  from {
+    transform: scale(0.95);
+  }
+}
+
+.countroduce {
+  font-size: 32rpx;
+  color: #666;
+  letter-spacing: 2rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 80rpx;
+    height: 4rpx;
+    background: #ff6b35;
+    position: absolute;
+    bottom: -20rpx;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.qr-code {
+  padding: 20rpx;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 24rpx;
+  display: inline-block;
+  transition: all 3s ease;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.qr-image {
+  width: 240px;
+  height: 240px;
+  border-radius: 24rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.06);
+}
+
+.wechat {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.service-time {
+  margin-bottom: 10px;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 30rpx;
+  display: block;
+}
+
+// --------------底部footerr-----------------
+.footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 40rpx;
+  backdrop-filter: blur(0);
+  animation: footEnter 2s ease-in-out;
+}
+
+@keyframes footEnter {
+  from {
+    transform: translateY(10rpx);
+  }
+}
+
+.footer-text {
+  color: #666;
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+  margin-bottom: 20rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+.button {
+  flex: none;
+  border-radius: 50rpx !important;
+  font-size: 28rpx !important;
+  transition: all 3s ease;
+}
+
+.phone {
+  font-size: 24px;
+  color: white;
+  border-radius: 40rpx;
+  letter-spacing: 2rpx;
+  background: rgba(0, 0, 0, 0.08);
+  color: #666 !important;
+}
+
+.call-button {
+  color: #fff;
+  border-radius: 30px;
+  font-size: 14px;
+  width: 140rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+}
+
+.copy-phoneNumber-button {
+  // background-color: #f5a623;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 30rpx;
+  font-size: 14px;
+  margin-top: 30rpx;
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+}
+
+.button:active {
+  transform: scale(0.96);
+}

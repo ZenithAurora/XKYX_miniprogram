@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 返回箭头 -->
+  <view class="nav-back-btn" bind:tap="navigateBack">
+    <text class="iconfont icon-a-zuojiantouzuo"></text>
+  </view>
+
+  <!-- 轮播图区域 -->
+  <swiper class="swiper-container" autoplay circular>
+    <block wx:for="{{activityDetailsList}}" wx:key="couponId">
+      <swiper-item>
+        <image src="{{item.posterUrl}}" mode="aspectFill" class="swiper-img" bind:tap="previewImage" data-url="{{item.posterUrl}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 整体套餐和卡片区域 -->
+  <view class="store-card">
+    <!-- 商家信息卡片 -->
+    <view class="storeInfo">
+      <view class="store-header">
+        <view class="store-title">{{storeInfo.storeName}}</view>
+      </view>
+      <view class="store-info">
+        <view class="store-position">
+          <text class="iconfont icon-a-dingweiweizhiditu"></text>
+          <text user-select>{{storeInfo.storeAddress}}</text>
+        </view>
+        <view class="store-phone">
+          <text class="iconfont icon-dianhua"></text>
+          <text user-select>{{storeInfo.phoneNumber}}</text>
+        </view>
+      </view>
+      <view class="store-service">
+        <text class="service-item">免预约</text>
+        <text class="service-item">先抢券</text>
+        <text class="service-item">后消费</text>
+      </view>
+    </view>
+
+
+    <!-- 分割线 -->
+    <van-divider contentPosition="center" customStyle="color: #ff3b30; border-color: #ff3b30; font-size: 28rpx;margin:20rpx; margin-left:50rpx;margin-right:50rpx; marign-bottom:1000rpx">精选套餐</van-divider>
+
+    <!-- 套餐item -->
+    <view class="couponItem" wx:for="{{activityDetailsList}}" wx:key="couponId">
+      <!-- 套餐主体 -->
+      <view class="package-main" id="{{item.couponId}}" bind:tap="couponDetails">
+        <image class="food-img" src="{{item.iconUrl}}" mode="aspectFill" />
+        <view class="left-content">
+          <view class="couponInfo">
+            <view class="package-title">{{item.title}}</view>
+            <!-- <view wx:if="{{item.already>99}}" class="soldQuantity">99+</view>
+            <view wx:else class="soldQuantity">{{item.already}}</view> -->
+          </view>
+          <view class="action-bar">
+            <view class="right-content">
+              <view class="price-group">
+                <text class="discount-price">￥{{item.payValue}}</text>
+                <text class="original-price">￥{{item.actualValue}}</text>
+              </view>
+              <view class="coupon-badge">
+                <text class="coupon-price">券后共省￥{{item.margin}}</text>
+              </view>
+            </view>
+            <button id="{{item.couponId}}" class="buy-button" catch:tap="ParticipateActivity">立即参与</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

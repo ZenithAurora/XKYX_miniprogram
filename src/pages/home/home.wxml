@@ -1,0 +1,96 @@
+<view class="homePage">
+  <!-- 引入骨架屏 -->
+
+  <import src="./skeleton/home.skeleton.wxml" />
+  <template is="skeleton" wx:if="{{loading}}" />
+
+  <view wx:else>
+    <view class="container">
+
+      <!-- 署名 -->
+      <van-divider contentPosition="center" customStyle="color: #009688; border-color: #009688; font-size: 12px" class="divider">
+        由Uchain-ocloud提供技术支持
+      </van-divider>
+
+      <!-- 顶部自定义导航栏 -->
+      <view class="navigatBar">
+        <image src="/assets/avator/logo.png" class="appLogo {{showLogo ? 'show' : ''}}" />
+        <image src="/assets/logo-font/logo-font.png" mode="aspectFit" class="appName {{scrollTop > 5 ? 'scrolled' : ''}}" />
+      </view>
+
+
+      <!-- 顶部公告 -->
+      <van-notice-bar left-icon="volume-o" text="{{announcement.content || ''}}" custom-class="van-notice" scrollable="{{announcement.content.length>24}}" speed="60" background="#f8f9fa" color="#2d3748" />
+
+      <!--【1】 广告轮播图 -->
+      <view class="advertisement">
+        <Swiper imgURLList="{{advImgUrlList}}" />
+      </view>
+
+      <!--【2】广告位收租 联系客服 -->
+      <button open-type="contact" class="server-info">
+        <text class="iconfont icon-kefu"></text>
+        主页广告位出租 在线咨询客服
+      </button>
+
+
+      <!--【3】活动专区(导航) -->
+      <view class="good-nav">
+        <view class="nav-header">
+          <text class="nav-title">活动专区</text>
+          <text class="nav-subtitle">ACTIVITY ZONE</text>
+        </view>
+        <view class="good-nav-item">
+          <scroll-view scroll-x="true" show-scrollbar="false" enable-passive enhanced>
+            <view class="activity-container">
+              <view wx:for="{{activityMessage}}" wx:key="activityId" class="activityItem">
+                <view wx:if="{{index < 5}}" class="kcbox">
+                  <navigator url="/pages/activity/activity?activityId={{item.activityId}}" class="activity-item" hover-class="none">
+                    <image src="{{item.iconUrl}}" mode="widthFix" class="kcbox-image" />
+
+                    <view class="name-overlay">
+                      <view class="good-item-name">{{item.activityName}}</view>
+                    </view>
+                  </navigator>
+                </view>
+              </view>
+
+              <view wx:if="{{activityMessage.length > 5}}" class="expand-icon" bindtap="goToAllGoodNav">
+                <view class="expand-gradient">
+                  <text class="iconfont icon-a-gengduocaidangongneng animate-rotate"></text>
+                </view>
+                <view class="expand-border"></view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+
+
+      <!--【4】活动宣传海报-轮播 -->
+      <view class="good-board">
+        <view class="board-header">
+          <text class="title">热门活动</text>
+          <text class="en-title">HOT EVENTS</text>
+        </view>
+        <view class="good-board-swiper">
+          <swiper autoplay circular vertical easing-function="easeOutCubic" class="swiper" touch-action="none">
+            <block wx:for="{{activityMessage}}" wx:key="activityId">
+              <navigator url="/pages/activity/activity?activityId={{item.activityId}}" class="navigatorToActivity">
+                <swiper-item class="swiperItem {{index === current ? 'swiper-item-active' : ''}}" data-index="{{index}}">
+                  <image src="{{item.posterUrl}}" mode="aspectFill" class="item-img" />
+                  <view class="item-caption">
+                    <text class="item-title">{{item.activityName}}</text>
+                  </view>
+                </swiper-item>
+              </navigator>
+            </block>
+          </swiper>
+        </view>
+      </view>
+
+      <!-- 【5】底部占位符 -->
+      <view class="placeHolder"></view>
+    </view>
+  </view>
+</view>

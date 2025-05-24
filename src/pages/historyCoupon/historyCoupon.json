@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "我的优惠券",
+  "navigationBarBackgroundColor": "#f5f7fa",
+  "backgroundColor": "#f5f7fa"
+}

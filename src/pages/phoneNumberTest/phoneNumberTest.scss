@@ -1,0 +1,271 @@
+.login-container {
+  min-height: 100vh;
+  background: #f8f9fb;
+  position: relative;
+  overflow: hidden;
+}
+
+//--------------------返回按钮------------------
+.nav-back-btn {
+  position: fixed;
+  top: 80rpx;
+  left: 30rpx;
+  z-index: 1000;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-back-btn .iconfont {
+  font-size: 42rpx;
+  color: #666;
+}
+
+//----------------------背景装饰元素----------------
+.decorative-bg {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+
+  .gradient-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+  }
+  .circle-1 {
+    width: 400rpx;
+    height: 400rpx;
+    background: linear-gradient(135deg, #4a90e2, #6c5ce7);
+    left: -20%;
+    top: -10%;
+  }
+
+  .circle-2 {
+    width: 300rpx;
+    height: 300rpx;
+    background: linear-gradient(45deg, #00cec9, #55efc4);
+    right: -15%;
+    top: 30%;
+  }
+}
+
+.content-wrapper {
+  margin-top: 110rpx;
+  padding: 60rpx 50rpx;
+  position: relative;
+  z-index: 1;
+
+  // 头部标题
+  .header {
+    margin-bottom: 80rpx;
+    .title {
+      display: block;
+      font-size: 45rpx;
+      font-weight: 600;
+      color: #2d3436;
+      margin-bottom: 12rpx;
+    }
+    .subtitle {
+      font-size: 24rpx;
+      color: #636e72;
+    }
+  }
+
+  /* ----------------步骤指示器样式----------------- */
+  .steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60rpx 0;
+    margin-bottom: 80rpx;
+  }
+
+  .step-item {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    background: #dfe6e9;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28rpx;
+    transition: all 0.3s ease;
+  }
+
+  .step-item.active {
+    background: #4a90e2;
+    transform: scale(1.1);
+  }
+
+  .step-line {
+    width: 100rpx;
+    height: 4rpx;
+    background: #dfe6e9;
+    margin: 0 20rpx;
+  }
+
+  /* --------------------头像上传样式----------------- */
+  .avatar-upload {
+    text-align: center;
+    margin-bottom: 60rpx;
+  }
+
+  .avatar-btn {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 8rpx 30rpx rgba(74, 144, 226, 0.15);
+    position: relative;
+  }
+
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .edit-overlay {
+    position: relative;
+    bottom: 50rpx;
+    left: 365rpx;
+    width: 50rpx;
+    height: 50rpx;
+    background: #4a90e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4rpx 12rpx rgba(74, 144, 226, 0.3);
+  }
+
+  .avatar-tip {
+    margin-top: -40rpx;
+    display: block;
+    color: #636e72;
+    font-size: 24rpx;
+  }
+
+  /* ----------------输入框样式-------------------- */
+  .input-field {
+    height: 100rpx;
+    background: rgba(255, 255, 255, 0.815);
+    border-radius: 46rpx;
+    padding: 0 30rpx;
+    font-size: 26rpx;
+    border: 1rpx solid rgba(250, 128, 114, 0.712);
+    margin-bottom: 30rpx;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* ----------------按钮通用样式---------------- */
+  .next-btn {
+    height: 96rpx;
+    line-height: 96rpx;
+    background: linear-gradient(135deg, #4a90e2, #8578ee);
+    color: rgb(255, 255, 255);
+    border-radius: 46rpx;
+    font-size: 34rpx;
+    font-weight: 500;
+    margin-top: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow-right {
+    margin-left: 5rpx;
+    margin-top: 8rpx;
+    font-size: 32rpx;
+    color: white;
+  }
+
+  /*--------------- 手机验证步骤样式------------------- */
+  .phone-form {
+    text-align: center;
+
+    .form-tip {
+      color: #999999;
+      font-size: 26rpx;
+      margin-bottom: 60rpx;
+      display: block;
+    }
+
+    .phone-btn {
+      line-height: 100rpx;
+      background: #fff;
+      border-radius: 46rpx;
+      color: #4a90e2;
+      font-size: 32rpx;
+    }
+
+    .phone-icon {
+      margin-right: 15rpx;
+    }
+  }
+
+  .agreement {
+    margin: 30rpx 0 60rpx 15rpx;
+    .agreement-text {
+      color: #636e72;
+      font-size: 26rpx;
+    }
+
+    .link {
+      color: #4a90e2;
+    }
+  }
+
+  .button-group {
+    display: flex;
+
+    .submit-btn,
+    .last-btn {
+      width: 260rpx;
+      background: linear-gradient(135deg, #4a90e2, #8578ee);
+      color: rgb(255, 255, 255);
+      border-radius: 46rpx;
+      font-size: 34rpx;
+      font-weight: 500;
+    }
+  }
+}
+
+/* 加载状态 */
+.loading-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  .loading-spinner {
+    width: 60rpx;
+    height: 60rpx;
+    border: 6rpx solid #f3f3f3;
+    border-top: 6rpx solid #4a90e2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

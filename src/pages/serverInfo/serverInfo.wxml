@@ -1,0 +1,23 @@
+<view class="container">
+  <!-- 返回箭头 -->
+  <view class="nav-back-btn" bind:tap="navigateBack">
+    <text class="iconfont icon-a-zuojiantouzuo"></text>
+  </view>
+  <view class="content">
+    <view class="countroduce">西科严选客服微信</view>
+    <view class="qr-code">
+      <image class="qr-image" src="/assets/avator/serverQS.png" show-menu-by-longpress />
+    </view>
+    <view class="info">
+      <text class="service-time">服务时间: 8:00---23:00</text>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-text">无法添加或疑难问题请联系工作人员</view>
+    <view class="contact">
+      <button class="button phone" size="mini" bind:tap="onCall" is-link>{{phone}}</button>
+      <button class="button call-button" size="mini" bind:tap="onCall" type="primary">拨打</button>
+      <button class="button copy-phoneNumber-button" size="mini" type="warn" bind:tap="onCopyPhoneNumber">复制</button>
+    </view>
+  </view>
+</view>

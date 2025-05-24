@@ -1,0 +1,20 @@
+<view class="all-good-nav">
+  <view class="good-nav-title">精彩活动</view>
+
+  <block wx:if="{{activityMessage.length}}">
+    <view class="all-good-nav-content">
+      <block wx:for="{{activityMessage}}" wx:key="activityId">
+        <view class="kcbox" hover-class="none">
+          <navigator url="/pages/activity/activity?activityId={{item.activityId}}" hover-class="none">
+            <image src="{{item.iconUrl}}" class="kcbox-image" />
+            <view class="good-item-name">{{item.activityName}}</view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </block>
+  <!-- 暂时只有这么多了 -->
+  <view class="all-good-nav-empty">
+    <image src="https://xkzx-mkj.oss-cn-beijing.aliyuncs.com/c397e3d3-443b-4be6-b3b2-01783e5ea7d2.png" />
+  </view>
+</view>

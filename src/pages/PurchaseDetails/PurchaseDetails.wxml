@@ -1,0 +1,63 @@
+<view class="container">
+  <!-- 返回箭头 -->
+  <view class="nav-back-btn" bind:tap="navigateBack">
+    <text class="iconfont icon-a-zuojiantouzuo" />
+  </view>
+
+
+  <!-- 商品头图 -->
+  <image class="banner" src="https://ts1.tc.mm.bing.net/th/id/R-C.b3a7697d2793ba094a861d546c31190d?rik=NevOIW4XmkUuMA&riu=http%3a%2f%2fseopic.699pic.com%2fphoto%2f50069%2f5445.jpg_wh1200.jpg&ehk=wuLPicg%2b9wXz8QAwp%2fAVFBtJQ6loBUiVfQZu2bbZODA%3d&risl=&pid=ImgRaw&r=0" mode="aspectFill" />
+
+  <!-- 标题区 -->
+  <view class="header">
+    <view class="badge">🔥 热销TOP1</view>
+    <text class="title">【排名靠前】干锅鸡排焖饭 [经典]</text>
+    <view class="tags">
+      <text class="tag">月售276+</text>
+      <text class="tag">98%好评</text>
+    </view>
+  </view>
+
+  <!-- 价格区 -->
+  <view class="price-card">
+    <view class="price-group">
+      <text class="current">￥12.58</text>
+      <text class="original">¥13.98</text>
+    </view>
+    <view class="sale-info">
+      <text class="stock">剩余：970份</text>
+      <progress percent="22" stroke-width="6" activeColor="#ff6b6b" />
+    </view>
+    <view class="discount-tag">默认享受9折优惠</view>
+  </view>
+
+
+  <!-- tab切换栏 -->
+  <van-tabs animated>
+    <van-tab title="团购详情">
+      <!-- 团购详情 -->
+      <view class="section card-hover">
+        <view class="section-header gradient-header">
+          <text class="section-title">🎉 优惠券详情</text>
+        </view>
+        <view class="section-content">
+          <rich-text user-select class="rich-content" nodes="{{groupPurchaseDetails}}"></rich-text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="购买须知">
+      <!-- 购买须知 -->
+      <view class="section card-hover">
+        <view class="section-header gradient-header">
+          <text class="section-title">📌 参与须知</text>
+        </view>
+        <view class="section-content">
+          <rich-text user-select class="rich-content" nodes="{{purchaseNotes}}"></rich-text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="网友评论">
+      <view>模块开发中...</view>
+    </van-tab>
+  </van-tabs>
+</view>

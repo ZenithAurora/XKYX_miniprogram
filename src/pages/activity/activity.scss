@@ -1,0 +1,274 @@
+page {
+  min-height: 100vh;
+  position: relative;
+  // background: linear-gradient(145deg, #f5fcff 0%, #ffffff 40%, #daf0fa 100%);
+  background-attachment: fixed;
+  background-size: 150% 150%;
+  animation: gradientFlow 12s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// -----------------返回箭头--------------------------
+/* 返回按钮容器 */
+.nav-back-btn {
+  position: absolute;
+  top: 100rpx;
+  left: 46rpx;
+  z-index: 1000;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* 字体图标样式 */
+.nav-back-btn .iconfont {
+  font-size: 42rpx;
+  color: rgb(126, 123, 123);
+  margin-left: -4rpx;
+  transition: transform 0.3s ease;
+}
+.nav-back-btn:active {
+  background-color: transparent;
+  transform: scale(0.92);
+}
+.nav-back-btn:active .iconfont {
+  transform: translateX(-100rpx);
+}
+
+/* ---------------------头部标题------------------- */
+.header {
+  padding: 10rpx;
+  text-align: center;
+}
+.title {
+  font-size: 48rpx;
+  color: #e72d39;
+  font-weight: 700;
+}
+
+/*-------------------- 轮播图样式 ---------------------*/
+.swiper-container {
+  height: 420rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-top: 0rpx;
+}
+.swiper-img {
+  width: 100%;
+  height: 100%;
+}
+
+// ---------------------整体套餐和卡片区域---------------------
+.store-card {
+  position: relative;
+  margin: 20rpx;
+  margin-top: -90rpx;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 44rpx;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+
+/*------------------ 商家信息卡片 ------------------------- */
+.storeInfo {
+  padding: 32rpx;
+}
+
+.store-header {
+  margin-bottom: 32rpx;
+}
+.store-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #333;
+  overflow: hidden;
+  /* 新增多行省略号特性 */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.store-title::before {
+  content: "🏠";
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  margin-right: 8rpx;
+  font-size: 30rpx;
+}
+
+.store-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 24rpx;
+  margin-top: -10rpx;
+}
+.store-info .iconfont {
+  color: #333130;
+  margin-right: 12rpx;
+}
+.store-phone {
+  margin-top: 10rpx;
+}
+.service-item {
+  font-size: 20rpx;
+  color: #ff3b30;
+  padding: 8rpx 16rpx;
+  background: linear-gradient(135deg, #fff5f5, #ffecee);
+  border-radius: 18rpx;
+  margin-right: 16rpx;
+}
+
+// -------------------------套餐模块-----------------------
+/* 整体容器 - 添加玻璃质感 */
+.couponItem {
+  margin: 26rpx;
+  padding: 20rpx;
+  background: rgba(255, 255, 255);
+  border-radius: 50rpx;
+  backdrop-filter: blur(40rpx);
+  border: 1rpx solid rgb(243, 242, 242);
+  color: #e72d39;
+  margin-bottom: 26rpx;
+}
+
+/* 套餐主体 - 优化图片展示 */
+.package-main {
+  display: flex;
+  gap: 30rpx;
+  margin: 10rpx 0;
+}
+.food-img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 20rpx;
+}
+
+.left-content {
+  flex: 2;
+}
+
+.couponInfo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 标题样式升级 */
+.package-title {
+  width: 320rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #495057;
+}
+.soldQuantity {
+  position: absolute;
+  right: 10rpx;
+  bottom: 0;
+  font-size: 18rpx;
+  color: #999;
+}
+.soldQuantity::before {
+  content: "已售 ";
+  font-size: 16rpx;
+}
+
+/* 价格样式 - 添加立体感 */
+.price-group {
+  margin-bottom: 10rpx;
+}
+.original-price {
+  font-size: 24rpx;
+  color: #adb5bd;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+.discount-price {
+  font-size: 36rpx;
+  color: #ff4d4f;
+  font-weight: 800;
+  text-shadow: 0 2rpx 4rpx rgba(255, 77, 79, 0.2);
+}
+.coupon-badge {
+  background: linear-gradient(135deg, #fff5f5, #ffecee);
+  border-radius: 26rpx;
+  padding: 0rpx 6rpx;
+  display: inline-block;
+}
+.coupon-price {
+  font-size: 22rpx;
+  color: #ff4d4f;
+  font-weight: 600;
+  margin: 5rpx;
+}
+
+/* 底部操作栏 - 现代风格 */
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+/* 按钮动效升级 */
+.buy-button {
+  padding: 0 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: linear-gradient(135deg, #ff4d4f, #ff7875);
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 16rpx rgba(255, 77, 79, 0.3);
+  transition: all 0.3s;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.buy-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 1.5s infinite;
+}
+@keyframes shine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}

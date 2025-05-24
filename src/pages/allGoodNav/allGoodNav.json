@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "全部活动",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#fdfdfd"
+}

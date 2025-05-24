@@ -1,0 +1,355 @@
+.coupons-container {
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* --------------------- 选项卡 ------------------------ */
+.tab-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background: #f5f7fa;
+  height: 96rpx;
+  border-radius: 16rpx 16rpx 0 0;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #666;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-item.active {
+  color: #ff5a5f;
+  font-weight: 580;
+  transform: scale(1.04);
+  transition: ease-in-out all 0.5s;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4rpx;
+  background: #ff5a5f;
+  border-radius: 50rpx;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* --------------------- 卡片容器 ------------------------ */
+.coupons-list {
+  padding: 24rpx;
+  width: auto;
+}
+
+.coupon-card {
+  position: relative;
+  margin-bottom: 32rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.coupon-card:active {
+  transform: translateY(4rpx);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------- 左侧图片区 ------------------------ */
+.card-left {
+  width: 240rpx;
+  position: relative;
+  padding: 20rpx;
+}
+
+.coupon-img-container {
+  width: 240rpx;
+  height: 240rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30rpx;
+  margin-top: 2rpx;
+}
+
+.coupon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 100rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.brand-info {
+  position: absolute;
+  bottom: 16rpx;
+  left: 24rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.brand-name {
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+/* --------------------- 右侧信息区 ------------------------ */
+.card-right {
+  padding: 24rpx;
+  padding-left: 10rpx;
+}
+
+.shop-info {
+  margin-bottom: 16rpx;
+}
+
+.shop-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8rpx;
+  width: 85%;
+}
+
+.shop-location-money {
+  display: flex;
+  font-size: 22rpx;
+  color: #666;
+  align-items: center;
+  margin: 12rpx 0;
+}
+.location {
+  overflow: hidden;
+  /* 新增多行省略号特性 */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  width: 75%;
+}
+
+.icon-a-dingweiweizhiditu {
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 4rpx;
+}
+.payMoney {
+  position: absolute;
+  right: 42rpx;
+  font-size: 20rpx;
+  color: #999999;
+  font-weight: 600;
+}
+
+.divider {
+  height: 2rpx;
+  background: linear-gradient(90deg, #eee 50%, transparent 100%);
+  margin: 16rpx 0;
+}
+
+/* --------------------- 优惠详情 ------------------------ */
+.usage-info {
+  margin-bottom: 20rpx;
+}
+
+.valid-date {
+  font-size: 20rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.icon-a-shijianzuijin {
+  margin-right: 4rpx;
+  color: #999;
+  font-size: 22rpx;
+}
+
+/* --------------------- 操作按钮 ------------------------ */
+.action-btns {
+  display: flex;
+  gap: 20rpx;
+  justify-content: space-around;
+  width: 50vw;
+}
+
+.btn {
+  flex: 1;
+  padding: 12rpx;
+  border-radius: 48rpx;
+  font-size: 26rpx;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.copyPosition-btn {
+  background: rgba(0, 0, 0, 0.04);
+  color: #666;
+  border: 1rpx solid #eee;
+}
+
+.copyPosition-btn:active {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.use-btn {
+  background: linear-gradient(135deg, #ff7e5f, #ff5a5f);
+  color: #fff;
+  box-shadow: 0 4rpx 16rpx rgba(255, 90, 95, 0.3);
+}
+
+.use-btn:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+/* --------------------- 状态标签 ------------------------ */
+.status-tag {
+  position: absolute;
+  right: -40rpx;
+  top: 15rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 8rpx 48rpx;
+  transform: rotate(45deg);
+  font-size: 20rpx;
+  font-weight: 300;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.usableStatus {
+  background: rgb(140, 211, 34);
+}
+.usedStatus {
+  background-color: #f19881;
+}
+
+/* --------------------- 空状态 ------------------------ */
+.empty-state {
+  padding: 160rpx 0;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 240rpx;
+  color: #e0e0e0;
+  margin-bottom: 32rpx;
+  opacity: 0.8;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+//----------------------模态框-------------------
+/* 模态框样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(12rpx);
+}
+
+.modal.show {
+  display: flex;
+  animation: modalSlideIn 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  @keyframes modalSlideIn {
+    from {
+      transform: translateY(50rpx);
+      opacity: 0.5;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.modal-content {
+  background: white;
+  width: 80%;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.modal-close {
+  font-size: 40rpx;
+  color: #999;
+}
+.money {
+  font-weight: bolder;
+  color: orange;
+  font-size: 40rpx;
+}
+.money::before {
+  content: "￥";
+  color: rgb(246, 168, 22);
+}
+
+.modal-body {
+  padding: 32rpx;
+  text-align: center;
+}
+
+.modal-image {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.tip {
+  margin-top: -30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.scan-btn {
+  background: #ff5a5f;
+  color: white;
+  margin-top: 22rpx;
+  width: 400rpx;
+}

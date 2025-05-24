@@ -1,0 +1,47 @@
+<view class="container">
+
+  <!-- 返回箭头 -->
+  <view class="nav-back-btn" bind:tap="navigateBack">
+    <text class="iconfont icon-a-zuojiantouzuo"></text>
+  </view>
+
+  <!-- 头部信息卡片 -->
+  <view class="card header-card">
+    <view class="store-info">
+      <view class="store-detail">
+        <text class="store-name">{{couponMsg.storeName}}</text>
+        <!-- 调整后的复制按钮 -->
+        <button class="copy-button" type="default" size="mini" bind:tap="onCopyPosition">复制地址</button>
+      </view>
+    </view>
+
+
+    <view class="position-info">
+      <text class="iconfont icon-a-dingweiweizhiditu"></text>
+      <text class="position">{{couponMsg.storeAddress}}</text>
+    </view>
+    <view class="time-info">
+      <text class="iconfont icon-a-shijianzuijin"></text>
+      <view class="valid-date">{{couponMsg.startDate}} - {{couponMsg.endDate}}</view>
+    </view>
+  </view>
+
+  <!-- 二维码主体区域 -->
+  <view class="card qr-card">
+    <view class="qr-header">
+      <text class="qr-title">优惠券核销码</text>
+      <text class="qr-tip">请向店员出示此二维码</text>
+    </view>
+
+    <view class="qr-container">
+      <!-- <image src="/assets/avator/serverQS.png" class="qr-image" /> -->
+      <image src="{{couponMsg.qrCodeString}}" class="qr-image" />
+    </view>
+
+    <view class="usage-tips">
+      <text class="iconfont icon-tishi tip-icon"></text>
+      <text class="tip-text">本码仅限个人使用，请勿转发分享</text>
+    </view>
+  </view>
+
+</view>
